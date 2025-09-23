@@ -1,0 +1,89 @@
+/* Estilos Gerais */
+body { /*estilizando todo o corpo da página (<body> do HTML).*/
+ background-color: #0077be; /*Define a cor de fundo. Esse #0077be é um código hexadecimal que representa um azul oceano.*/
+ background-image: url('../assets/images/fundo-do-mar.jpg');
+ background-size: cover; /*Faz a imagem de fundo cobrir toda a tela, ajustando proporção.*/
+ background-attachment: fixed; /*Faz o fundo ficar fixo quando você rola a página.*/
+ color: #fff; /*Define a cor do texto. #fff = branco.*/
+ font-family: 'Arial', sans-serif; /*Define a fonte usada no site. Aqui ele tenta usar Arial; se não tiver, usa outra fonte genérica “sem serifa”.*/
+ text-align: center; /*Centraliza todo o texto.*/
+ margin: 0; /* Remove as margens automáticas que o navegador coloca. */
+ padding: 20px; /*é o espaço interno entre a borda de um elemento e o conteúdo dele.*/
+}
+header h1 { /*aplicar estilos a todos os <h1> que estão dentro de <header>.*/
+  font-size: 2.5em; /*Define o tamanho da fonte. em é relativo ao tamanho padrão do texto (1em = tamanho normal). 2,5 vezes maior que o tamanho padrão.*/ 
+  color: #ffde2d; /*#ffde2d é um amarelo vivo, parecido com o do Bob Esponja.*/
+  text-shadow: 2px 2px 4px #000000; /* Adiciona sombra ao texto. 2px = deslocamento horizontal da sombra. 2px = deslocamento vertical. 4px = borrão da sombra*/
+}
+
+main { /*Aplica estilos ao conteúdo principal do site*/
+ max-width: 900px; /*Limita a largura máxima do <main> a 900 pixels. auto = margem automática à esquerda e direita*/
+ margin: 0 auto; /*Centraliza o <main> horizontalmente. 0 = sem margem em cima e embaixo*/
+ background-color: rgba(0, 0, 0, 0.3); /*Define a cor de fundo do <main>. preto transparente (30% de opacidade).*/
+ border-radius: 15px; /*Faz os cantos ficarem arredondados.*/
+ padding: 20px; /*Espaço interno entre a borda do <main> e o conteúdo dentro dele.*/
+}
+
+section { /*Aplica estilos a todas as seções do site (<section>).*/
+ padding: 20px; /*Espaço interno entre a borda da seção e o conteúdo dentro dela*/
+ margin-bottom: 20px; /*Espaço externo embaixo da seção, separando-a da próxima.*/
+ border-bottom: 2px solid #ffde2d; /*Coloca uma linha amarela sólida de 2 pixels na parte inferior da seção.*/
+}
+
+section:last-child { /*Seleciona apenas a última <section> da página.*/
+ border-bottom: none; /*Remove a linha inferior só da última seção.*/
+}
+h2 { /*Aplica estilo a todos os títulos <h2> das seções.*/
+ color: #ffde2d; /*Define a cor do texto como amarelo*/
+ font-size: 2em;
+}
+
+button { /*Aplica estilos a todos os botões da página.*/
+ background-color: #e63946; /*Define a cor de fundo do botão como vermelho vibrante.*/
+ color: white; /*Cor do texto dentro do botão.*/
+ border: none; /*Remove a borda padrão do botão.*/
+ padding: 10px 20px; /*Espaço interno do botão: 10px em cima e embaixo e 20px nas laterais*/
+ border-radius: 8px; /*Arredonda os cantos do botão.*/
+ font-size: 1em; 
+ cursor: pointer; /*Faz o cursor do mouse virar uma mãozinha quando passar por cima do botão.*/
+ transition: background-color 0.3s, transform 0.2s; /*Animações suaves ao interagir com o botão: background-color 0.3s → cor de fundo muda suavemente em 0,3 segundos. transform 0.2s → qualquer mudança de tamanho/posição acontece em 0,2 segundos*/
+}
+
+button:hover { /*Seleciona todos os botões quando o mouse passa por cima.*/
+ background-color: #d62828;
+ transform: scale(1.05); /*Aumenta o botão em 5% ao passar o mouse.*/
+}
+/* Seção de Personagens */
+.galeria-personagens { /*Seleciona todos os elementos com a classe galeria-personagens.*/
+ display: flex; /*o modo flexbox, que facilita alinhar elementos horizontalmente ou verticalmente.*/
+ justify-content: space-around; /*Distribui os elementos com espaço igual entre eles*/
+ flex-wrap: wrap; /*ermite que os elementos quebrem a linha se não couberem na largura da tela.*/
+ gap: 20px; /*Define o espaço entre os elementos da galeria.*/
+}
+
+.personagem-card {
+ cursor: pointer;
+ transition: transform 0.3s;
+}
+.personagem-card:hover {
+ transform: scale(1.1); /*Aumenta o card em 10% ao passar o mouse.*/
+}
+.personagem-card img { /*Define o tamanho da imagem: 150x150px.*/
+ width: 150px;
+ height: 150px;
+ border-radius: 50%; /*Deixa a imagem redonda.*/
+ border: 4px solid #ffde2d; /*Adiciona uma borda amarela de 4px ao redor da imagem.*/
+ object-fit: cover; /*Faz a imagem preencher o espaço da caixa sem deformar.*/
+}
+.info-box { /*Aplica estilos a todos os elementos com a classe info-box.*/
+ margin-top: 20px; /*Cria espaço acima da caixa*/
+ padding: 15px; /*Espaço interno da caixa.*/
+ background-color: rgba(255, 255, 255, 0.2); /*Fundo branco transparente (20% de opacidade).*/
+ border-radius: 10px; /*Cantos arredondados.*/
+ min-height: 50px; /*Altura mínima da caixa: 50 pixels, mesmo que não tenha muito texto.*/
+ transition: opacity 0.5s; /*Sempre que a opacidade (opacity) da caixa mudar, a mudança será suave ao longo de 0,5 segundos.*/
+}
+/* Classe para esconder elementos */
+.escondido {
+ display: none;
+}

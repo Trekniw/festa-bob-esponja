@@ -1,0 +1,90 @@
+<!DOCTYPE html> <!--isso garante que o navegador entenda que você está usando HTML5.-->
+<html lang="pt-br"> <!--define o idioma-->
+<head> <!--informações da página (Como se fosse a cabeça da página)-->
+    <meta charset="UTF-8"> <!--define a codificação dos caracteres (acentos, emojis) faz o site entender a linguagem do usuario-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--faz o site ser responsivo, se adequar ao tamanho da tela do dispositivo-->
+    <title>Festa na Fenda do Biquíni!</title> <!--define o título que aparece na aba do navegador-->
+    <link rel="stylesheet" href="styles/main.css">  <!-- <link> é o “comando” que diz ao navegador para puxar um arquivo de fora. (tipo o 'import' em python). rel="stylesheet" especifica o tipo de arquivo, nesse caso, CSS (folha de estilos). href="styles/main.css" indica o caminho do arquivo que você quer usar. -->
+</head>
+<body> <!--É o corpo da página, ou seja, tudo que o usuário vai ver e interagir.-->
+    <header> <!--É uma seção do body, geralmente usada para cabeçalhos ou introduções.-->
+        <h1> Você está convidado para a Festa do Bob Esponja! </h1> <!-- h1 É o título mais importante da página, o “cartaz gigante”. Ajuda o navegador e ferramentas como o Google a entender qual é o título principal da página..-->
+    </header>
+
+<main> <!--Representa o conteúdo principal da página, aquilo que é realmente importante.-->
+   <section id="convite"> <!--section Define uma seção ou bloco do conteúdo, geralmente com um tema específico. id="convite" → é como colocar uma etiqueta no bloco, para poder referenciar depois no CSS ou JS -->
+     <h2>O Evento do Século Submarino!</h2> <!--Subtítulo da seção, menor que <h1>, mas ainda importante.-->
+     <p>Junte-se a nós para uma celebração inesquecível na casa do Bob Esponja!</p> <!-- <p> Parágrafo de texto.-->
+     <button id="btn-agenda">Ver a Programação</button> <!--<button>: Botão clicável que o usuário pode interagir. id="btn-agenda" → etiqueta para que você possa referenciar esse botão no CSS ou no JavaScript-->
+   </section> 
+
+ <section id="personagens">
+    <h2>Convidados de Honra</h2>
+    <div class="galeria-personagens">
+        <div class="personagem-card" data-nome="Bob Esponja" data-descricao="O anfitrião mais animado do oceano!"> <!--div: Bloco genérico usado para organizar conteúdo-->
+            <!--class="galeria-personagens" → classe, que permite aplicar o mesmo estilo a vários blocos semelhantes. Como uma estante ou espaço onde vários cartões de personagens vão ficar juntos.-->
+            <img src="assets/images/bob-esponja.png" alt="Bob Esponja">
+            <p>Bob Esponja</p>
+        </div>
+        <div class="personagem-card" data-nome="Patrick Estrela"
+        data-descricao="Especialista em diversão e melhor amigo do Bob Esponja.">
+        <img src="assets/images/patrick.png" alt="Patrick Estrela">
+        <p>Patrick Estrela</p>
+        </div>
+        <div class="personagem-card" data-nome="Lula Molusco" data-descricao="O vizinho
+que secretamente adora uma boa festa (mas nunca admite).">
+        <img src="assets/images/lula-molusco.png" alt="Lula Molusco">
+        <p>Lula Molusco</p>
+        </div>
+
+        <div class="personagem-card" data-nome="Gary" data-descricao="O mascote caracol muito amado pelo dono.">
+        <img src="assets/images/gary.png" alt="Gary">
+        <p>Gary</p>
+       </div>
+
+       <div class="personagem-card" data-nome="Sr. Sirigueijo" data-descricao="O chefe sovina, dono do Siri Cascudo.">
+        <img src="assets/images/Sirigueijo.png" alt="Sr. Sirigueijo">
+        <p>Sr. Sirigueijo</p>
+       </div>
+       <div class="personagem-card" data-nome="Sandy" data-descricao="O ser da terra firme mais inteligente do oceano (Não deixe o Plankton saber).">
+        <img src="assets/images/Sandy.png" alt="Sandy">
+        <p>Sandy</p>
+       </div>
+       <div class="personagem-card" data-nome="Amigo Bolha" data-descricao="O Amigo Bolha, odiado por muitos, mas, amado pelo Bob Esponja.">
+        <img src="assets/images/amigo-bolha.png" alt="Amigo Bolha">
+        <p>Amigo Bolha</p>
+       </div>
+       <div class="personagem-card" data-nome="Sr. e Sra Calça Quadrada" data-descricao="Os incríveis Pai e Mãe do Bob esponja.">
+        <img src="assets/images/pais.png" alt="Sr. e Sra Calça Quadrada">
+        <p>Sr. e Sra Calça Quadrada</p>
+       </div>
+    </div>
+    <div id="info-personagem" class="info-box">
+    </div>
+ </section>
+
+ <section id="agenda" class="escondido"> <!--seção chamada “agenda”. id="agenda" → identifica essa seção como única no site. class="escondido" → indica que essa seção pode ficar escondida (provavelmente com CSS ou JS você vai controlar quando aparece).-->
+    <h2>Programação da Festa</h2>
+    <ul> <!--unordered list (lista não ordenada).-->
+    <li>18:00 - Chegada dos convidados e Caça às Águas-Vivas</li>  <!--<li> → list item (item da lista).-->
+    <li>19:00 - Concurso de Hambúrguer de Siri</li> <!--Cada <li> é um evento da programação.-->
+    <li>20:00 - Show de Talentos com o Lula Molusco</li>
+    <li>21:00 - Dança das Bolhas</li>
+  </ul>
+ </section>
+
+<section id="curiosidades"> <!--Cria uma nova seção chamada “curiosidades”.-->
+    <h2>Você Sabia?</h2>
+    <p id="curiosidade-texto">O criador do Bob Esponja, Stephen Hillenburg, era um biólogo
+marinho!</p>
+     <button id="btn-curiosidade">Nova Curiosidade</button> <!--nome único desse botão, para o código saber “quem ele é”. Como um botão físico de “trocar papel” na caixa, que mostra uma nova curiosidade cada vez que você aperta. -->
+</section>
+</main>
+
+<footer> <!--rodapé da página-->
+ <p>Criado na Fenda do Biquíni</p>
+ </footer>
+ <div id="background-bolhas"></div>
+ <script src="scripts/main.js"></script> <!--chamando um arquivo de JavaScript.-->
+</body> 
+</html>
