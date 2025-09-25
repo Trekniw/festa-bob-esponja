@@ -62,9 +62,9 @@ button:hover { /*Seleciona todos os botões quando o mouse passa por cima.*/
 }
 
 .personagem-card {
- cursor: pointer;
- transition: transform 0.3s;
+    position: relative; /* garante que a tooltip fique posicionada em relação ao card */
 }
+
 .personagem-card:hover {
  transform: scale(1.1); /*Aumenta o card em 10% ao passar o mouse.*/
 }
@@ -75,15 +75,70 @@ button:hover { /*Seleciona todos os botões quando o mouse passa por cima.*/
  border: 4px solid #ffde2d; /*Adiciona uma borda amarela de 4px ao redor da imagem.*/
  object-fit: cover; /*Faz a imagem preencher o espaço da caixa sem deformar.*/
 }
-.info-box { /*Aplica estilos a todos os elementos com a classe info-box.*/
- margin-top: 20px; /*Cria espaço acima da caixa*/
- padding: 15px; /*Espaço interno da caixa.*/
- background-color: rgba(255, 255, 255, 0.2); /*Fundo branco transparente (20% de opacidade).*/
- border-radius: 10px; /*Cantos arredondados.*/
- min-height: 50px; /*Altura mínima da caixa: 50 pixels, mesmo que não tenha muito texto.*/
- transition: opacity 0.5s; /*Sempre que a opacidade (opacity) da caixa mudar, a mudança será suave ao longo de 0,5 segundos.*/
+.tooltip {
+    position: absolute;  /* Faz a nuvem se posicionar em relação ao card do personagem */
+    bottom: 100%;             /* Coloca a nuvem logo acima do card/bubble */
+    left: 50%;                /* Centraliza horizontalmente em relação ao card */
+    transform: translateX(-50%);  /* Ajusta para que o centro da nuvem fique exatamente alinhado ao centro do card */
+    background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo branca, quase opaca para ser visível */
+    color: #000;  /* Cor do texto da nuvem (preto) */
+    padding: 8px 12px; /* Espaçamento interno da nuvem */
+    border-radius: 12px;  /* Bordas arredondadas para parecer uma nuvem/dialogue box */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    display: none;      /* Mantém invisível por padrão, só aparece quando o mouse estiver sobre o card */
+    font-size: 0.9em; /* Tamanho do texto um pouco menor que o normal */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* Sombra leve para dar profundidade e destaque */
 }
-/* Classe para esconder elementos */
+
+
+
+#background-bolhas {
+ position: fixed; /*a posição da bolha segue o fluxo da página.*/
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1; /* controla a camada; negativo = atrás de tudo. */
+ overflow: hidden; /*se a bolha sair do container, ela não aparece fora da tela.*/
+}
+.bolha {
+ position: absolute;
+ bottom: -100px; /* Começa fora da tela, embaixo */
+ width: 40px;
+ height: 40px;
+ background-color: rgba(200, 230, 255, 0.35); /*Red, Green, Blue, Alpha (Vermelho, Verde, Azul, Transparência). a = 0.35 = 35% opaco / 65% transparente */ 
+ border-radius: 50%;
+ animation: flutuar 10s linear infinite;
+}
+/* Animação de flutuação */
+@keyframes flutuar {
+ 0% {
+ transform: translateY(0) translateX(0);
+ }
+ 100% {
+ transform: translateY(-120vh) translateX(20vw); /* Move para cima e para o lado */
+ }
+}
+
+#agenda ul {
+  list-style-type: none; /* remove os bullets */
+  padding: 0;            /* tira o recuo padrão da lista */
+  margin: 0;             /* tira a margem padrão da lista */
+}
+#agenda {
+  background-color: rgba(0, 0, 0, 0.3); /* fundo semi-transparente */
+  border-radius: 12px;                  /* cantos arredondados */
+  padding: 20px;                        /* espaço interno */
+  margin-top: 15px;                     /* espaço para separar */
+  text-align: center;                     /* alinhar os textos no centro */
+}
 .escondido {
- display: none;
+  display: none; /* Garante que a seção fique invisível até o JS liberar */
+}
+
+.curiosidades{
+  background-color: rgba(0, 0, 0, 0.3); /* fundo semi-transparente */
+  border-radius: 12px;                  /* cantos arredondados */
+  color: #fff; /* texto branco */
+  margin-top: 10px; /* espaço em cima da caixa */
 }
